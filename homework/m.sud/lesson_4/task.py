@@ -17,13 +17,13 @@ print(my_dict["tuple"][-1])
 # добавьте в конец списка еще один элемент
 # удалите второй элемент списка
 my_list.append("l6")
-my_list.pop(2)
+my_list.pop(1)
 print(my_list)
 
 # Для того, что хранится под ключом ‘dict’:
 # добавьте элемент с ключом ('i am a tuple',) и любым значением
 # удалите какой-нибудь элемент
-my_dict1["i am a tuple"] = "new"
+my_dict1["i am a tuple,"] = "new"
 my_dict1.pop("d3")
 print(my_dict1)
 
