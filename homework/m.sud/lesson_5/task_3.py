@@ -18,4 +18,3 @@ subject1, subject2, subject3 = subjects
 
 my_text = f'Students: {student1}, {student2}, {student3} study these subjects: {subject1}, {subject2}, {subject3}.'
 print(my_text)
-
