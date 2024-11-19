@@ -30,3 +30,6 @@ print(my_text2.format(student1, student2, student3, subject1, subject2, subject3
 
 my_text3 = "Students: {2}, {1}, {0} study these subjects: {4}, {3}, {5}."
 print(my_text3.format(student3, student2, student1, subject2, subject1, subject3))
+
+print("Students:", ", ".join(students) + " study these subhects:", ", ".join(subjects) + ".")
+languages = ['Python', 'Java', 'Ruby']
