@@ -11,22 +11,18 @@ text = ("Etiam tincidunt neque erat, quis molestie enim imperdiet vel."
 print(text)
 
 new_text = text.split()
-print(new_text)
+# print(new_text)
 final_text = []
 for i in new_text:
-    if i.endswith(","):
+    if i.endswith(",") or i.endswith("."):
+        last_symbol = i[-1]
+        # print(last_symbol)
         word = i[:-1]
-        word_final = word + "ing,"
+        word_final = word + "ing" + last_symbol
         # print(word_final)
-        final_text.append(word_final)
-    elif i.endswith("."):
-        word = i[:-1]
-        word_final = word + "ing."
-        # print(word_final)
-        final_text.append(word_final)
     else:
-        word = i + "ing"
+        word_final = i + "ing"
     # print(word)
-    final_text.append(word)
+    final_text.append(word_final)
 
 print(" ".join(final_text))
