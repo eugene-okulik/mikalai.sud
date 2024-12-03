@@ -14,6 +14,11 @@ def f_gen():
 
 fib_gen = f_gen()
 
+num3 = 1
+num200 = 1
+num1000 = 1
+num100000 = 1
+
 for i, number in enumerate(fib_gen):
     if i == 4:
         num3 = number
