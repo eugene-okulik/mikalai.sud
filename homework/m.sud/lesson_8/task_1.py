@@ -17,7 +17,7 @@ bonus = random.randint(1, 100)
 print("Input salary:")
 salary_input = int(input())
 bb = str(if_bonus)
-if if_bonus == True:
+if if_bonus:
     print("Great! you have bonus: " + bb + ". Your salary is: " + str(salary_input + bonus))
 else:
     print("._. not bonus: your salary is: " + str(salary_input))
