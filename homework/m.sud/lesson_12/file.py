@@ -17,9 +17,12 @@ class Flawors:
 
 
 class Market(Flawors):
-    def __init__(self, name, price):
+    def __init__(self, name, price, time, color, size):
         self.name = name
         self.price = price
+        self.time = time
+        self.color = color
+        self.size = size
 
     def __repr__(self):
         return f'{self.name})'
@@ -27,18 +30,12 @@ class Market(Flawors):
 
 class RedFlawors(Market):
     def __init__(self, name, price, time, color, size):
-        super().__init__(name, price)
-        self.time = time
-        self.color = color
-        self.size = size
+        super().__init__(name, price, time, color, size)
 
 
 class BlueFlawors(Market):
     def __init__(self, name, price, time, color, size):
-        super().__init__(name, price)
-        self.time = time
-        self.color = color
-        self.size = size
+        super().__init__(name, price, time, color, size)
 
 
 fl1 = RedFlawors("fl_red_1", 10, 10, "red", 140)
