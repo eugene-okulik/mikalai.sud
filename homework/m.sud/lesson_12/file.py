@@ -21,7 +21,6 @@ class Market(Flawors):
 class FlRose(Market):
     def __init__(self, fl_id, f_size, time_live, name, color, price, spikes):
         super().__init__(fl_id, f_size, time_live, name, color, price, )
-        self.fl_id = fl_id
         self.spikes = spikes
 
 
