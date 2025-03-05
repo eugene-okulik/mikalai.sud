@@ -1,4 +1,5 @@
-INSERT INTO students (name, second_name, group_id) VALUES ('namev2', 'second_namev2', 1);
+INSERT INTO students (name, second_name, group_id) VALUES ('namev2', 'second_namev2', NULL);
+INSERT INTO students (name, second_name) VALUES ('namev2', 'second_namev2');
 
 select * from students;
 
