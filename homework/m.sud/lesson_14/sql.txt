@@ -1,0 +1,54 @@
+INSERT INTO students (name, second_name, group_id) VALUES ('namev2', 'second_namev2', NULL);
+INSERT INTO students (name, second_name) VALUES ('namev2', 'second_namev2');
+
+select * from students;
+
+insert into books (title, taken_by_student_id) values ('book1', 418);
+
+insert into books (title, taken_by_student_id) values ('book2', 418);
+
+select * from books;
+
+insert into `groups` (title, start_date, end_date) values ('groopv1', 'start_date', 'end_date');
+
+select * from `groups`;
+
+update students set group_id = 193, name = 'mikalai',second_name = 'sudzenka' where id = 418;
+
+insert into subjets (title) values ('titlesv1');
+
+insert into subjets (title) values ('titlesv2');
+
+insert into subjets (title) values ('titlesv3');
+
+select * from subjets;
+
+insert into lessons (title, subject_id) values ('titlev1', 287);
+
+insert into lessons (title, subject_id) values ('titlev2', 288);
+
+insert into lessons (title, subject_id) values ('titlev3', 289);
+
+select * from lessons;
+
+insert into marks (value, lesson_id, student_id) values ('123', 651, 418);
+
+insert into marks (value, lesson_id, student_id) values ('123', 652, 418);
+
+insert into marks (value, lesson_id, student_id) values ('123', 653, 418);
+
+select * from marks;
+
+
+select value from marks where student_id = 418;
+
+select title from books where taken_by_student_id = 418;
+
+
+select * from students
+join `groups` on students.group_id = groups.id
+join books on students.id = books.taken_by_student_id
+join marks on marks.student_id = students.id
+join lessons on marks.lesson_id = lessons.id
+join subjets on lessons.subject_id = subjets.id
+where students.id = 418;
