@@ -1,5 +1,6 @@
 import requests
 
+
 def r_post():
     body = {
         "name": "justname",
@@ -44,15 +45,14 @@ def first_posts():
     response = requests.get("http://167.172.172.115:52353/object/1").json()
     print(response)
 
+
 def r_delete():
     response = requests.delete("http://167.172.172.115:52353/object/12495")
     print(response.status_code)
+
 
 r_post()
 first_posts()
 r_put()
 r_patch()
 r_delete()
-
-
-
