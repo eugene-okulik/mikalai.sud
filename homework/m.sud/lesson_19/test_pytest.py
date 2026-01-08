@@ -85,5 +85,3 @@ def test_r_patch(data_for_test):
     response = requests.patch(f"http://167.172.172.115:52353/object/{data_for_test}", json=body, headers=headers)
     assert response.status_code == 200
     print(response.json())
-
-
