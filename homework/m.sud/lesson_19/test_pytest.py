@@ -60,7 +60,7 @@ def data_for_test():
         check_response = requests.get(f"http://167.172.172.115:52353/object/{created_id}")
         if check_response.status_code == 200:
             requests.delete(f"http://167.172.172.115:52353/object/{created_id}")
-    except:
+    except requests.exceptions.RequestException:
         print(f"Could not check object {created_id}")
 
 
