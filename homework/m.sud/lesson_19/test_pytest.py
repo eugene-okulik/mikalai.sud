@@ -56,8 +56,18 @@ def data_for_test():
     created_id = response["id"]
     print(created_id)
     yield created_id
-    delete_response = requests.delete(f"http://167.172.172.115:52353/object/{created_id}")
-    print(delete_response.status_code)
+    try:
+        check_response = requests.get(f"http://167.172.172.115:52353/object/{created_id}")
+        if check_response.status_code == 200:
+            requests.delete(f"http://167.172.172.115:52353/object/{created_id}")
+    except:
+        print(f"Could not check object {created_id}")
+
+
+
+def test_r_delete(data_for_test):
+    response = requests.delete(f"http://167.172.172.115:52353/object/{data_for_test}")
+    assert response.status_code == 200
 
 
 @pytest.mark.medium
