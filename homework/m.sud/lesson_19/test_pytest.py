@@ -2,6 +2,7 @@ import pytest
 import requests
 import allure
 
+
 @pytest.fixture()
 def before_after():
     print("before test")
@@ -14,6 +15,7 @@ def start_end():
     print("Start testing")
     yield
     print("Testing completed")
+
 
 @allure.story("post")
 @allure.feature("регистрация")
@@ -64,10 +66,12 @@ def data_for_test():
     except requests.exceptions.RequestException:
         print(f"Could not check object {created_id}")
 
+
 @allure.feature("регистрация")
 def test_r_delete(data_for_test):
     response = requests.delete(f"http://167.172.172.115:52353/object/{data_for_test}")
     assert response.status_code == 200
+
 
 @allure.feature("заказ")
 @pytest.mark.medium
@@ -85,6 +89,7 @@ def test_r_put(data_for_test):
     response = requests.put(f"http://167.172.172.115:52353/object/{data_for_test}", json=body, headers=headers)
     assert response.status_code == 200
 
+
 @allure.feature("статистика")
 def test_r_patch(data_for_test):
     body = {
@@ -98,23 +103,23 @@ def test_r_patch(data_for_test):
     with allure.step("проверь что 200"):
         print(response.json())
 
+
 @allure.feature("статистика")
 def test_one():
-
     assert 1 == 1
+
 
 @allure.feature("статистика")
 def test_two():
-
     assert 2 == 2
+
 
 @allure.feature("корзина")
 def test_three():
-
     assert 3 == 3
+
 
 @allure.story("get")
 @allure.feature("корзина")
 def test_four():
-
     assert 4 == 4
